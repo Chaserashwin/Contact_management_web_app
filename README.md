@@ -45,37 +45,6 @@ The project is deployed entirely on **Vercel**, with the backend implemented usi
 
 ---
 
-## 🗂 Project Structure
-
-```
-project-root/
-├── api/
-│   └── contacts/
-│       ├── index.js        # GET + POST contacts
-│       └── [id].js         # DELETE contact
-│
-├── lib/
-│   └── db.js               # MongoDB connection (cached)
-│
-├── models/
-│   └── Contact.js          # Mongoose schema
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── ContactForm.jsx
-│   │   │   └── ContactList.jsx
-│   │   └── App.jsx
-│   ├── index.html
-│   ├── vite.config.js
-│   └── package.json
-│
-├── vercel.json
-└── README.md
-```
-
----
-
 ## 🧪 API Endpoints
 
 | Method | Endpoint            | Description        |
