@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: contact-management-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGODB_URI
+        scope: run
+        sync: false
+      - key: NODE_ENV
+        value: production
