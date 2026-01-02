@@ -4,14 +4,14 @@
   "env": {
     "VITE_API_URL": "@vite_api_url"
   },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
+      "source": "/api/(.*)",
       "destination": "https://your-backend-url.vercel.app/api/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
