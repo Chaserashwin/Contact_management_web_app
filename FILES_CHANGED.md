@@ -3,7 +3,9 @@
 ## 📝 Files Modified
 
 ### Frontend Components (API URL integration)
+
 1. **frontend/src/components/ContactForm.jsx**
+
    - Added: `import API_BASE_URL from "../config"`
    - Updated: `fetch("/api/contacts")` → `fetch(\`${API_BASE_URL}/api/contacts\`)`
 
@@ -12,7 +14,9 @@
    - Updated: API fetch calls to use `${API_BASE_URL}`
 
 ### Backend Server
+
 3. **backend/server.js**
+
    - Updated CORS configuration for production
    - Added support for `FRONTEND_URL` environment variable
    - Now accepts both localhost (dev) and production URLs
@@ -25,7 +29,9 @@
 ## ✨ New Files Created
 
 ### Deployment Configuration
+
 1. **backend/render.yaml**
+
    - Render deployment configuration
    - Specifies build and start commands
    - Configures environment variables
@@ -36,17 +42,21 @@
    - Output directory settings
 
 ### Frontend Configuration
+
 3. **frontend/src/config.js** (NEW)
    - Configurable API base URL
    - Detects environment (dev vs production)
    - Handles both local proxy and production URLs
 
 ### Environment Files
+
 4. **backend/.env.example**
+
    - Template for backend environment variables
    - Example values for reference
 
 5. **frontend/.env.example**
+
    - Template for frontend environment variables
    - Example values for reference
 
@@ -55,28 +65,34 @@
    - Empty `VITE_API_URL` for dev (uses Vite proxy)
 
 ### Documentation (5 guides)
+
 7. **START_HERE.md** (NEW)
+
    - Quick overview and navigation guide
    - Points to correct guide for your situation
 
 8. **DEPLOYMENT_VISUAL_GUIDE.md** (NEW)
+
    - Step-by-step with detailed instructions
    - 5-part deployment process
    - Troubleshooting section
    - ~15 minutes to follow
 
 9. **DEPLOYMENT_CHECKLIST.md** (NEW)
+
    - Quick reference checklist
    - Environment variables table
    - Troubleshooting quick fixes
    - ~5 minutes to reference
 
 10. **DEPLOYMENT_GUIDE.md** (NEW)
+
     - Complete technical guide
     - Post-deployment configuration
     - Detailed testing steps
 
 11. **DEPLOYMENT_COMPLETE.md** (NEW)
+
     - Summary of all changes
     - Architecture diagram
     - Pro tips and troubleshooting
@@ -86,7 +102,9 @@
     - Where to go next
 
 ### Utility Files
+
 13. **deploy.sh** (NEW)
+
     - Bash script helper for deployment setup
     - Optional convenience script
 
@@ -99,6 +117,7 @@
 ## 🔄 How It All Works
 
 ### Development Environment
+
 ```
 Local Frontend (http://localhost:5173)
   ├─ Vite dev server
@@ -114,6 +133,7 @@ Local MongoDB
 ```
 
 ### Production Environment
+
 ```
 Frontend (Vercel)
   ├─ React app built with Vite
@@ -134,16 +154,16 @@ Database (MongoDB Atlas)
 
 ## 🎯 Key Changes Summary
 
-| Area | What Changed | Why |
-|------|--------------|-----|
-| Frontend | Added `config.js` with API URL | Supports both dev and prod URLs |
-| Frontend | Updated components to use API_BASE_URL | Uses correct URL based on environment |
-| Backend | Updated CORS config | Allows production frontend URL |
-| Backend | Added FRONTEND_URL env var | Dynamic CORS configuration |
-| Deployment | Added render.yaml | Tells Render how to build/run |
-| Deployment | Added vercel.json | Tells Vercel build/routing config |
-| Environment | Added .env.example files | Template for others/reference |
-| Documentation | Added 5 deployment guides | Instructions for deployment |
+| Area          | What Changed                           | Why                                   |
+| ------------- | -------------------------------------- | ------------------------------------- |
+| Frontend      | Added `config.js` with API URL         | Supports both dev and prod URLs       |
+| Frontend      | Updated components to use API_BASE_URL | Uses correct URL based on environment |
+| Backend       | Updated CORS config                    | Allows production frontend URL        |
+| Backend       | Added FRONTEND_URL env var             | Dynamic CORS configuration            |
+| Deployment    | Added render.yaml                      | Tells Render how to build/run         |
+| Deployment    | Added vercel.json                      | Tells Vercel build/routing config     |
+| Environment   | Added .env.example files               | Template for others/reference         |
+| Documentation | Added 5 deployment guides              | Instructions for deployment           |
 
 ---
 
@@ -168,7 +188,7 @@ Before deploying, verify:
 **Total deployment guides**: 4  
 **Lines of code changed**: ~20 lines  
 **Configuration complexity**: Low ✅  
-**Time to deploy**: ~10 minutes per service  
+**Time to deploy**: ~10 minutes per service
 
 ---
 

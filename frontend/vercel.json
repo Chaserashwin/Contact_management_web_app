@@ -2,12 +2,16 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "env": {
-    "VITE_API_URL": "@mongodb_uri"
+    "VITE_API_URL": "@vite_api_url"
   },
-  "redirects": [
+  "routes": [
     {
-      "source": "/:path((?!.*\\.).*)",
-      "destination": "/index.html"
+      "src": "/api/(.*)",
+      "destination": "https://your-backend-url.vercel.app/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }

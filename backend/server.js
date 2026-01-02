@@ -1,7 +1,9 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
-require("dotenv").config();
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 
@@ -24,8 +26,10 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log("MongoDB connection failed:", err));
 
+// Import routes
+import contactRoutes from "./routes/contactRoutes.js";
+
 // Routes
-const contactRoutes = require("./routes/contactRoutes");
 app.use("/api/contacts", contactRoutes);
 
 // Error handling middleware
